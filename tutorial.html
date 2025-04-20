@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Player</title>
+    <link rel="shortcut icon" href="favicon_io-autodry/apple-touch-icon.png" type="image/x-icon">
+    <title>AutoDry Tutorial Video</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -28,7 +29,14 @@
             max-width: 800px;
             /* border: 5px solid orange; */
             border-radius: 10px;
-            box-shadow: rgba(255, 157, 0, 0.3) 0px 2px 4px 0px, rgba(255, 157, 0, 0.3) 0px 2px 16px 0px;
+            box-shadow:
+    0 0 20px rgba(255, 136, 0, 0.3),   /* Outer glow */
+    0 0 60px rgba(255, 0, 128, 0.2),   /* Pinkish glow */
+    0 0 100px rgba(255, 255, 0, 0.1);  /* Yellow light spread */
+  
+  border: 1px solid rgba(255, 165, 0, 0.2); /* Optional subtle border */
+  background-image: linear-gradient(to bottom right, #1c1c1c, #0d0d0d); /* Gradient background */
+
         }
         .video-title {
             margin-top: 10px;

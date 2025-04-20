@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="title ">
+        <img src="logo.png" alt="Orange stylized door icon with shadow on black background " class="logoImg w-16 h-20"/>
+               <h1 class="text-4xl font-bold gradient-text tracking-wide">
+                CONTACT AUTODRY
+               </h1>
+    </div>
+    <div class="container">
+        <!-- Login Form Section -->
+        <div class="form-section">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+            <input type="text" class="input" id="name" placeholder="Enter your name" required>
+            <input type="text" id="surname" class="input" placeholder="Enter your surname" required>
+            <input type="email" id="email" class="input" placeholder="Enter your email address" required>
+            <textarea id="message" class = "input" placeholder="Enter your message" required></textarea>
+            
+            <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- Contact Details Section -->
+        <div class="contact-details">
+            <h2>Our Contact Details</h2>
+            <p>Email: autodry7@gmail.com</p>
+            <p>Phone: +91 8806437844</p>
+        </div>
+    </div>
+
+    <script type="module">
+        
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBDCXSMAsRftWzCjxXCVjoCkR77zNzaFrA",
+            authDomain: "autodry-e965e.firebaseapp.com",
+            projectId: "autodry-e965e",
+            storageBucket: "autodry-e965e.firebasestorage.app",
+            messagingSenderId: "781068915603",
+            appId: "1:781068915603:web:e014589890405db0898e66"
+        };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const surname = document.getElementById('surname').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            try {
+            await addDoc(collection(db, 'contacts'), {
+                name: name,
+                surname: surname,
+                email: email,
+                message: message,
+                timestamp: serverTimestamp()
+            });
+            alert('Your details and message have been submitted successfully!');
+            e.target.reset();
+            } catch (error) {
+            console.error('Error adding document: ', error);
+            alert('Failed to submit your details. Please try again.');
+            }
+        });
+
+       
+    </script>
+</body>
+</html>

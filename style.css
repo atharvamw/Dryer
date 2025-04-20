@@ -76,3 +76,108 @@ main
 {
     color:#C0C0C0;
 }
+
+
+
+/* Contact Us */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    background-color: black;
+    padding: 0;
+    
+}
+.container {
+    width: 80%;
+    display: flex;
+    background-color: #15171b;
+    color: white;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-self: center;
+    margin: 23px;
+    padding: 20px;
+
+    box-shadow:
+    0 0 20px rgba(255, 136, 0, 0.3),   /* Outer glow */
+    0 0 60px rgba(255, 0, 128, 0.2),   /* Pinkish glow */
+    0 0 100px rgba(255, 255, 0, 0.1);  /* Yellow light spread */
+  
+  border: 1px solid rgba(255, 165, 0, 0.2); /* Optional subtle border */
+  background-image: linear-gradient(to bottom right, #1c1c1c, #0d0d0d); /* Gradient background */
+
+.input {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 15px;
+    background-color: #1c1c1c;
+    color: white;
+    margin: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+}
+.form-section, .contact-details {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.form-section h2, .contact-details h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-section form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-section form button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    margin: 12px;
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form-section form button:hover {
+    background-color: #0056b3;
+}
+.gradient-text {
+    background: linear-gradient(90deg, #fbbf24 0%, #d97706 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    flex-direction: row;
+}
+.logoImg {
+    width: 50px;
+    margin-right: 10px;
+}
