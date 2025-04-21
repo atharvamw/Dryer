@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon_io-autodry/apple-touch-icon.png">
   <style>
+
+
    body {
       font-family: 'Montserrat', sans-serif;
     }
@@ -28,6 +30,11 @@
     .btn-orange:hover {
       background-color: #ea580c;
     }
+    @media screen and (max-width: 768px) {
+           .contactUs{
+            margin-top: 30px;
+           }
+        }
   </style>
  </head>
  <body class="bg-black text-white min-h-screen flex flex-col">
@@ -43,9 +50,16 @@
      </p>
     </div>
   </div>
-  <a aria-label="Follow AutoDry on Instagram" class="btn-orange text-black font-semibold py-3 mt-8 px-8 rounded-lg text-center transition-colors duration-300" href="contactUs.html" rel="noopener noreferrer" target="_blank">
+  <div class="navButtons">
+
+  <a aria-label="Follow AutoDry on Instagram" class="btn-orange contactUs text-black font-semibold py-3 px-3 rounded-lg text-center transition-colors duration-300" href="contactUs.html" rel="noopener noreferrer" target="_blank">
  <span class="hidden sm:inline">|</span> </i>
   <span class="hidden sm:inline">Contact Us</span> <i class="fas fa-phone sm:hidden"></i></a>
+
+  <a aria-label="View AutoDry Achievements" class="btn-orange text-black font-semibold py-3 contactUs px-3 rounded-lg text-center transition-colors duration-300" href="achievements.html" rel="noopener noreferrer" target="_blank">
+   <span class="hidden sm:inline">Achievements</span> <i class="fas fa-trophy sm:hidden"></i>
+  </a>
+</div>
   
   </header>
   <main class="flex-grow flex flex-col md:flex-row items-center max-w-7xl mx-auto px-6 py-12 gap-12">
@@ -76,6 +90,7 @@
       </a>
       <span class="sm:hidden">Watch Video</span>
     </div>
+    
     
    </section>
   </main>

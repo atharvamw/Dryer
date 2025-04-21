@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Achievements</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+          @media screen and (max-width: 768px) {
+            .achievement{
+                width: auto;
+                height: auto;
+            }
+        }
+        .container {
+            width: 70%;
+            margin: auto;
+            text-align: center;
+            justify-content: center;
+        }
+        .container img {
+            width: 70%;
+            height: auto;
+        }
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .achievements-container{
+            display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 100px; */
+    flex-direction: column;
+        }
+        .achievement{
+            width: 90%;
+        }
+        .allAchievements{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* flex-direction: column; */
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 94px 50px;
+        }
+        .achievement:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s;
+            box-shadow:
+    0 0 20px rgba(255, 136, 0, 0.3),   /* Outer glow */
+    0 0 60px rgba(255, 0, 128, 0.2),   /* Pinkish glow */
+    0 0 100px rgba(255, 255, 0, 0.1);  /* Yellow light spread */
+  
+  border: 1px solid rgba(255, 165, 0, 0.2); /* Optional subtle border */
+  background-image: linear-gradient(to bottom right, #1c1c1c, #0d0d0d); /* Gradient background */
+        }
+
+      
+    </style>
+</head>
+<body class="defaultBody">
+    <div class="achievements-container">
+        <img src="logo.png" alt="Orange stylized door icon with shadow on black background " class="logoImg w-16 h-20"/>
+        <h1 class="text-4xl font-bold gradient-text tracking-wide">Our ACHIEVEMENTS</h1>
+    <div class="container">
+        <img name = "slide" src="Achivements-Images/image1.jpg" alt="Achievements" style="width: auto; height: 500px;">
+    </div>
+
+    <div class="allAchievements">
+             <div class="card" style="width: 18rem;">
+                     <img src="Achivements-Images/image1.jpg" class="achievement" alt="..." style="width: auto; height: 200px;">
+                     </div>
+                                      <div class="card" style="width: 18rem;">
+                                          <img src="Achivements-Images/image2.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;">
+                                          
+                                      </div>
+                                      <div class="card" style="width: 18rem;">
+                                          <img src="Achivements-Images/image3.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;">
+                                          
+                                      </div>
+                                      <div class="card" style="width: 18rem;">
+                                          <img src="Achivements-Images/image4.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;">
+                                          
+                                      </div>
+                                      <div class="card" style="width: 18rem;">
+                                          <img src="Achivements-Images/image5.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;">
+                                        
+                                      </div>
+                                      <div class="card" style="width: 18rem;">
+                                          <img src="Achivements-Images/image6.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;">
+                                          
+                                      </div>
+                                      <div class="card" style="width: 18rem;">
+                                          <img src="Achivements-Images/image7.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;">
+                                          
+                                      </div>
+                                      <div class="card" style="width: 18rem;">
+                                          <img src="Achivements-Images/image8.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;">
+                                         
+                                      </div>
+                                      <div class="card" style="width: 18rem;">
+                                          <img src="Achivements-Images/image9.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;">
+                                         
+      </div>
+</div>
+
+    <button class="button" onclick="location.href='index.html'">Go Back to Home</button>
+</body>
+</html>
+
+<script>
+    var i = 0;
+    var images = [];
+    var time = 3000;
+    //Image list
+    images[0] = "Achivements-Images/image1.jpg";
+    images[1] = "Achivements-Images/image2.jpg";
+    images[2] = "Achivements-Images/image3.jpg";
+    images[3] = "Achivements-Images/image4.jpg";
+    images[4] = "Achivements-Images/image5.jpg";
+    images[5] = "Achivements-Images/image6.jpg";
+    images[6] = "Achivements-Images/image7.jpg";
+    images[7] = "Achivements-Images/image8.jpg";
+    images[8] = "Achivements-Images/image9.jpg";
+
+    function changeImg(){
+        document.slide.src = images[i];
+        if(i < images.length - 1){
+            i++;
+        } else {
+            i = 0;
+        }
+
+        setTimeout("changeImg()", time);
+    }
+
+    window.onload = changeImg;
+</script>
