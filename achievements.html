@@ -14,6 +14,7 @@
             width: 70%;
             margin: auto;
             text-align: center;
+            z-index: -1;
             justify-content: center;
         }
         .container img {
@@ -62,6 +63,21 @@
   border: 1px solid rgba(255, 165, 0, 0.2); /* Optional subtle border */
   background-image: linear-gradient(to bottom right, #1c1c1c, #0d0d0d); /* Gradient background */
         }
+        .single-img{
+            z-index: 1;
+            position: absolute;
+            top: auto;
+            display: none;
+
+        }
+        #close-btn{
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
 
       
     </style>
@@ -69,45 +85,49 @@
 <body class="defaultBody">
     <div class="achievements-container">
         <img src="logo.png" alt="Orange stylized door icon with shadow on black background " class="logoImg w-16 h-20"/>
-        <h1 class="text-4xl font-bold gradient-text tracking-wide">Our ACHIEVEMENTS</h1>
-    <div class="container">
-        <img name = "slide" src="Achivements-Images/image1.jpg" alt="Achievements" style="width: auto; height: 500px;">
+        <h1 class="text-4xl font-bold gradient-text tracking-wide" style="font-size: clamp(2rem, 5vw, 4rem);">Our ACHIEVEMENTS</h1>
+    <div class="container" id="img-container">
+        <img name="slide" src="Achivements-Images/image1.jpg" alt="Achievements" style="width: 100%; height: auto; max-height: 500px; object-fit: contain;">
+    </div>
+    <div class="single-img container">
+        <img id="img" src="Achivements-Images/image1.jpg" alt="Achievements" style="width: 100%; height: auto; max-height: 500px; object-fit: contain;">
+        <h1 id="close-btn">X</h1>
     </div>
 
     <div class="allAchievements">
              <div class="card" style="width: 18rem;">
-                     <img src="Achivements-Images/image1.jpg" class="achievement" alt="..." style="width: auto; height: 200px;">
+                     <img src="Achivements-Images/image1.jpg" class="achievement" alt="..." style="width: auto; height: 200px;" onclick="showImg('Achivements-Images/image1.jpg')">
                      </div>
                                       <div class="card" style="width: 18rem;">
-                                          <img src="Achivements-Images/image2.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;">
+                                          <img src="Achivements-Images/image2.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;" onclick="showImg('Achivements-Images/image2.jpg')">
                                           
                                       </div>
                                       <div class="card" style="width: 18rem;">
-                                          <img src="Achivements-Images/image3.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;">
+                                          <img src="Achivements-Images/image3.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;" onclick="showImg('Achivements-Images/image3.jpg')">
                                           
                                       </div>
                                       <div class="card" style="width: 18rem;">
-                                          <img src="Achivements-Images/image4.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;">
+                                          <img src="Achivements-Images/image4.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;" onclick="showImg('Achivements-Images/image4.jpg')">
                                           
                                       </div>
                                       <div class="card" style="width: 18rem;">
-                                          <img src="Achivements-Images/image5.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;">
+                                          <img src="Achivements-Images/image5.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;" onclick="showImg('Achivements-Images/image5.jpg')">
                                         
                                       </div>
                                       <div class="card" style="width: 18rem;">
-                                          <img src="Achivements-Images/image6.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;">
+                                          <img src="Achivements-Images/image6.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;" onclick="showImg('Achivements-Images/image6.jpg')">
                                           
                                       </div>
                                       <div class="card" style="width: 18rem;">
-                                          <img src="Achivements-Images/image7.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;">
+                                          <img src="Achivements-Images/image7.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;" onclick="showImg('Achivements-Images/image7.jpg')">
                                           
                                       </div>
                                       <div class="card" style="width: 18rem;">
-                                          <img src="Achivements-Images/image8.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;">
+                                          <img src="Achivements-Images/image8.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;" onclick="showImg('Achivements-Images/image8.jpg')">
                                          
                                       </div>
                                       <div class="card" style="width: 18rem;">
-                                          <img src="Achivements-Images/image9.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;">
+                                          <img src="Achivements-Images/image9.jpg" class="achievement" alt="..." style="width: 250px; height: 200px;" onclick="showImg('Achivements-Images/image9.jpg')">
                                          
       </div>
 </div>
@@ -143,4 +163,23 @@
     }
 
     window.onload = changeImg;
+    function showImg(src) {
+        let imgContainer = document.querySelector('.single-img');
+        let img = document.getElementById("img");
+        document.getElementById("img-container").style.opacity = 0.1;
+        img.src = src;
+        imgContainer.style.display = "block";
+        imgContainer.style.position = "absolute";
+        document.querySelector(".achievements-container").scrollTo({ top: 0, behavior: 'smooth' });
+    document.querySelector(".allAchievements").style.opacity = 0.1;
+    window.scrollTo({ top: document.body.clientHeight / 2 + 20, behavior: 'smooth' });
+    }
+    document.getElementById("close-btn").onclick = function() {
+        let imgContainer = document.querySelector('.single-img');
+        imgContainer.style.display = "none";
+        document.getElementById("img-container").style.opacity = 1;
+
+        document.querySelector(".allAchievements").style.opacity = 1;
+
+    }
 </script>
